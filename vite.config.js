@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/digi-Photo_Booth/', // This must match your repository name
+  base: '/digi-Photo_Booth/', // Match your repo name exactly
 });
