@@ -1,7 +1,7 @@
 
 import "./camera.css"
 import React, { useState, useRef,useEffect } from "react";
-
+import CaptureButton from "./capture-button";
 const Camera = () => {
     const videoRef = useRef(null);
 
@@ -27,10 +27,28 @@ useEffect(() => {
         }
     };
 }, []);
+
+    const captureButton = document.getElementsByClassName("capture");
+    const canvas = document.getElementById("canvas");
+    const imageContainer = document.getElementById("image-comtainer");
+    
+
+    function startCountDown(){
+        countdown(3);
+    }
+
+    function captureImage(){
+        const context = canvas.getContext("2d");
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+        const imgData = canvas.toDataUrl("image/png");
+        
+    }
     return (
-        <section className="video-container">
+        <><section className="video-container">
             <video ref={videoRef} className="video" autoPlay></video>
         </section>
+        </>
     )
 };
 
