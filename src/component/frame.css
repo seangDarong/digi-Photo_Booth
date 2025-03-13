@@ -1,0 +1,22 @@
+.frame {
+    width: 310px;
+    height: 746px;
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    margin-top: 300px;
+    margin-left: 200px;
+    
+  }
+  
+  .photo-slot {
+    width: 90%;
+    height: 22%;
+    background-color: black;
+  }
+body{
+}
