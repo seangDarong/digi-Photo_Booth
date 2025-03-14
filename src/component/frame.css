@@ -1,6 +1,6 @@
 .frame {
-    width: 310px;
-    height: 746px;
+    width: 211px;
+    height: 644px;
     background-color: white;
     border: 1px solid black;
     display: flex;
@@ -16,7 +16,5 @@
   .photo-slot {
     width: 90%;
     height: 22%;
-    background-color: black;
+    /* background-color: black; */
   }
-body{
-}

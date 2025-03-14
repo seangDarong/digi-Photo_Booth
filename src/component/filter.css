@@ -1,0 +1,7 @@
+.filter-container{
+    margin: 20px;
+}
+
+.filter-container > h3{
+    text-align: center;
+}

@@ -2,8 +2,10 @@
 import "./camera.css"
 import React, { useState, useRef,useEffect } from "react";
 import CaptureButton from "./capture-button";
+import Filter from "./filter"
 const Camera = () => {
     const videoRef = useRef(null);
+    const [filter, setFilter] = useState("none");
 
 //Initialize camera when the page is loads
 useEffect(() => {
@@ -28,26 +30,29 @@ useEffect(() => {
     };
 }, []);
 
-    const captureButton = document.getElementsByClassName("capture");
-    const canvas = document.getElementById("canvas");
-    const imageContainer = document.getElementById("image-comtainer");
+    // const captureButton = document.getElementsByClassName("capture");
+    // const canvas = document.getElementById("canvas");
+    // const imageContainer = document.getElementById("image-comtainer");
     
 
-    function startCountDown(){
-        countdown(3);
-    }
+    // function startCountDown(){
+    //     countdown(3);
+    // }
 
-    function captureImage(){
-        const context = canvas.getContext("2d");
-        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    // function captureImage(){
+    //     const context = canvas.getContext("2d");
+    //     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-        const imgData = canvas.toDataUrl("image/png");
+    //     const imgData = canvas.toDataUrl("image/png");
         
-    }
+    // }
     return (
         <><section className="video-container">
-            <video ref={videoRef} className="video" autoPlay></video>
+            <video ref={videoRef} className="video" autoPlay style={{ filter: filter }}></video>
         </section>
+
+            <Filter onFilterChange={setFilter}/>
+
         </>
     )
 };
